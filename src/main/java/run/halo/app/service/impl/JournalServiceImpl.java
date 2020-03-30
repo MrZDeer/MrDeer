@@ -53,7 +53,7 @@ public class JournalServiceImpl extends AbstractCrudService<Journal, Integer> im
     @Override
     public Journal createBy(JournalParam journalParam) {
         Assert.notNull(journalParam, "Journal param must not be null");
-
+        //convertTo()方法：转换类型
         Journal journal = journalParam.convertTo();
         journal.setContent(MarkdownUtils.renderHtml(journal.getSourceContent()));
 
